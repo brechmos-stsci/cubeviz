@@ -167,7 +167,6 @@ class IFUCube(object):
         :return:
         """
         # (i.e. Angstroms instead of Angstrom will be corrected and added)
-        print(hdu.header[key][:-1], len(hdu.header[key]), correct)
         if hdu.header[key] not in correct and len(hdu.header[key]) > 0 and hdu.header[key][:-1] in correct:
             self.good_check(False)
             self._log_text[hdu.name][key] = "{} is {}, setting to {}\n".format(key, hdu.header[key], hdu.header[key][:-1])
